@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda Deportiva</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 bg-white shadow-sm z-20 px-4 py-4 flex justify-between items-center max-w-6xl mx-auto">
+    <h1 class="text-xl font-black tracking-wider uppercase text-zinc-900">Athletic<span class="text-indigo-600">Fit</span></h1>
+    <button onclick="toggleCart()" class="relative bg-zinc-100 p-2 rounded-full hover:bg-zinc-200 transition">
+      🛒 <span id="cart-count" class="absolute -top-1 -right-1 bg-indigo-600 text-white text-xs px-2 py-0.5 rounded-full font-bold">0</span>
+    </button>
+  </header>
+
+  <!-- Catálogo -->
+  <main class="max-w-6xl mx-auto p-4">
+    <div id="catalog" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </main>
+
+  <!-- Carrito Drawer / Modal -->
+  <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden flex justify-end">
+    <div class="bg-white w-full max-w-md h-full p-6 flex flex-col justify-between overflow-y-auto">
+      <div>
+        <div class="flex justify-between items-center border-b pb-4">
+          <h2 class="text-lg font-bold">Tu Carrito</h2>
+          <button onclick="toggleCart()" class="text-gray-500 font-bold text-xl">&times;</button>
+        </div>
+        <div id="cart-items" class="mt-4 space-y-4"></div>
+      </div>
+
+      <!-- Checkout Form -->
+      <div class="border-t pt-4 mt-6">
+        <div class="flex justify-between text-lg font-bold mb-4">
+          <span>Total:</span>
+          <span id="cart-total">$0.00</span>
+        </div>
+        <div class="space-y-2 mb-4">
+          <input type="text" id="client-name" placeholder="Tu Nombre completo" class="w-full border p-2 rounded text-sm focus:outline-indigo-600">
+          <input type="text" id="client-address" placeholder="Dirección / Ciudad" class="w-full border p-2 rounded text-sm focus:outline-indigo-600">
+        </div>
+        <button onclick="sendToWhatsApp()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg flex justify-center items-center gap-2">
+          Completar por WhatsApp 💬
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
