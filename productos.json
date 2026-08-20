@@ -15,7 +15,7 @@
     "precio": 18.00,
     "tallas": ["XS", "S", "M"],
     "colores": ["Blanco", "Negro", "Rosa"],
-    "imagen": "https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=500&q=80"
+    "imagen": "https://images.unsplash.com/photo-6a8706d8ad1ee45a52d26953.imgix.net"
   },
   {
     "id": 3,
